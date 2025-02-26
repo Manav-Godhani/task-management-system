@@ -149,7 +149,7 @@ const Navbar = () => {
           onMouseLeave={(e) => (e.target.style.color = styles.navbarLink.color)}
           to="/About"
         >
-          ABOUT
+          About
         </Link>
         <Link
           to="/contact"
@@ -157,7 +157,7 @@ const Navbar = () => {
           onMouseEnter={(e) => (e.target.style.color = styles.navbarLinkHover.color)}
           onMouseLeave={(e) => (e.target.style.color = styles.navbarLink.color)}
         >
-          CONTACT
+          Contact
         </Link>
 
         <Link
