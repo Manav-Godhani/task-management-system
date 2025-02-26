@@ -72,7 +72,7 @@ function StudentRegister() {
           <IoArrowBack />
         </button>
       </Link>
-      <div className="d-flex align-items-center justify-content-center min-vh-100 position-relative">
+      <div className="parent-container">
         <div className="card shadow-lg border-0 d-flex flex-row" style={{ width: "850px", borderRadius: "15px", zIndex: 1 }}>
           <div className="w-50 d-none d-md-block" style={{ background: "#F8F9FA", borderTopLeftRadius: "15px", borderBottomLeftRadius: "15px" }}>
             <Lottie animationData={reg} loop={true} style={{ width: "100%", height: "100%" }} />
@@ -123,13 +123,25 @@ function StudentRegister() {
         </div>
       </div>
       <style jsx>{`
+        /* Disable scrolling on the body */
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden; /* This disables both vertical and horizontal scrolling */
+          height: 100%;
+        }
+
+        /* Ensure the main container fills the screen without causing overflow */
         .parent-container {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 100vh;
+          height: 100vh; /* Make sure the container fills the full height of the viewport */
           width: 100%;
+          overflow: hidden; /* Prevent scrolling */
         }
+
+        /* Prevent overflow on the background animation container */
         .background-animation {
           position: fixed;
           top: 0;
@@ -137,29 +149,12 @@ function StudentRegister() {
           width: 100%;
           height: 100%;
           z-index: -1;
-          overflow: hidden;
+          overflow: hidden; /* This also helps prevent scrolling caused by animations */
         }
-        .form-container {
-          width: 70%;
-          max-width: 1200px;
-          height: auto;
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(-100px);
-          border-radius: 12px;
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 40px;
-        }
-        .left-panel {
-          background: #F8F9FA;
-          border-top-left-radius: 15px;
-          border-bottom-left-radius: 15px;
-        }
-        .form-section {
-          border-top-right-radius: 15px;
-          border-bottom-right-radius: 15px;
+
+        /* Prevent scrolling inside the card container */
+        .card {
+          overflow: hidden; /* Prevent internal scrolling */
         }
       `}</style>
     </>
