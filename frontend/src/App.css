@@ -1,0 +1,6 @@
+/* Add custom styles in a separate CSS file or within a <style> tag */
+.jumbotron {
+  background-image: url('https://via.placeholder.com/1500x500'); /* Add a background image */
+  background-size: cover;
+  background-position: center;
+}
