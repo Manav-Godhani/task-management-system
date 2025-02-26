@@ -97,7 +97,7 @@ const FeedbackForm = () => {
                 ) : (
                   <form className="feedback-form" onSubmit={handleSubmit}>
                     <center>
-                      <h2 className="form-title mb-3">Write your review</h2>
+                      <h2 className="form-title mb-3">How is your experience ?</h2>
                     </center>
                     {successMsg && <p className="success-msg">{successMsg}</p>}
                     {errorMsg && <p className="error-msg">{errorMsg}</p>}
