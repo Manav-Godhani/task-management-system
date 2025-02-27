@@ -17,7 +17,7 @@ function App() {
       <div
         style={{
           position: "relative",
-          width: "100vw",
+          width: "100%",
           height: "100vh", // Full screen height
           overflow: "hidden", // Prevent overflow
           boxSizing: "border-box", // Include padding and border in dimensions
