@@ -8,7 +8,7 @@ const socialIcons = [
   { icon: 'google', url: '#' },
   { icon: 'instagram', url: '#' },
   { icon: 'linkedin', url: '#' },
-  { icon: 'github', url: '#' }
+  { icon: 'github', url: 'https://github.com/Manav-Godhani/task-management-system' }
 ];
 
 const pages = [
