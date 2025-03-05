@@ -15,7 +15,7 @@ const Contact = () => {
       </div>
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-6" style={{ marginTop: "100px" }}>
+          <div className="col-md-6" style={{ marginTop: "170px" }}>
             <h2 className="text-primary">Contact Us</h2>
             <h1 className="mb-4">GET IN TOUCH WITH US</h1>
             <p className="text-muted mb-4">
@@ -63,7 +63,7 @@ const Contact = () => {
 
           <div
             className="col-md-6"
-            style={{ marginTop: "130px", position: "relative" }}
+            style={{ marginTop: "210px", position: "relative" }}
           >
             {/* Background Lottie Animation */}
             <div
@@ -148,7 +148,7 @@ const Contact = () => {
       />
 
       {/* footer */}
-      <div className="container-fluid m-0 p-0 mt-5">
+      <div className="container-fluid m-0 p-0">
         <Footer />
       </div>
     </>
