@@ -73,10 +73,7 @@ function normalizePort(val) {
 //     return val1;
 //   }
 
-//   if (port1 >= 0) {
-//     // port1 number
-//     return port1;
-//   }
+
 
 //   return false;
 // }
