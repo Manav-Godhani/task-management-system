@@ -20,6 +20,14 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://manav123:manav123@cluster0.c3iwu.mongodb.net/project')
   .then(() => console.log('Connected!'));
 
+//   var port = normalizePort(process.env.PORT || '3003');
+// app.set('port', port);
+
+// const mongoose = require('mongoose');
+
+// mongoose.connect('mongodb+srv://abhishek123:mahapatra12345@cluster0.c3iwu.mongodb.net/project')
+//   .then(() => console.log('Connected!'));
+
 /**
  * Create HTTP server.
  */
@@ -55,6 +63,23 @@ function normalizePort(val) {
 
   return false;
 }
+
+
+// function normalizePort(val1) {
+//   var port1 = parseInt(val1, 11);
+
+//   if (isNaN(port1)) {
+//     // named pipeline
+//     return val1;
+//   }
+
+//   if (port1 >= 0) {
+//     // port1 number
+//     return port1;
+//   }
+
+//   return false;
+// }
 
 /**
  * Event listener for HTTP server "error" event.
