@@ -5,6 +5,21 @@ import Lottie from "lottie-react";
 import reg from "../assets/reg.json";
 import Waves2 from "../assets/Waves2.json";
 import { IoArrowBack } from "react-icons/io5";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { auth } from "../Firebase/firebase"
+
+const signUpAndSendOTP = async (email, password) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    await sendEmailVerification(userCredential.user);
+    alert("Verification email sent. Please check your inbox.");
+    return userCredential.user;
+  } catch (error) {
+    console.error("Error during sign-up:", error.message);
+    throw error; // Re-throw for further handling in handleSubmit
+  }
+};
+
 
 const initialState = { name: "", email: "", password: "", confirmPassword: "" };
 function reducer(state, action) {
@@ -45,18 +60,22 @@ function StudentRegister() {
     if (!validateForm()) return;
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/sturesgister", formState, {
-        headers: { "Content-Type": "application/json" },
-      });
-      console.log("API Response:", response.data);
-      setAlertMsg({ message: "Student registered successfully!", type: "success" });
-      setTimeout(() => {
-        navigate("/studentlogin");
-      }, 2000);
+      
+      const name = formState.name
+      const email = formState.email
+      const password = formState.password
+
+      const response = await axios.post('http://localhost:3000/sturesgister', { name, email, password });
+
+      console.log(response)
+
+      await signUpAndSendOTP(email, password);
+      setAlertMsg({ message: "Registration successful! Please verify your email.", type: "success" });
+
+      navigate("/studentLogin")
+
     } catch (error) {
-      console.error("Error response:", error.response);
-      const errorMessage = error.response?.data?.message || "Registration failed. Check your API.";
-      setAlertMsg({ message: errorMessage, type: "danger" });
+      setAlertMsg({ message: error.message || "Failed to register. Please try again.", type: "danger" });
     } finally {
       setLoading(false);
     }

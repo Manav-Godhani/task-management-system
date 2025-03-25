@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 import Footer from "./component/Footer";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import Manavbck1 from "./assets/Manavbck1.json";
+import Manavbck1 from "./assets/bluegreen.json";
 import Blackbot from "./assets/blackbot.json";
 import Four from "../src/assets/four.json";
 

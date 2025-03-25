@@ -8,7 +8,7 @@ const socialIcons = [
   { icon: 'google', url: '#' },
   { icon: 'instagram', url: '#' },
   { icon: 'linkedin', url: '#' },
-  { icon: 'github', url: 'https://github.com/Manav-Godhani/task-management-system' }
+  { icon: 'github', url: '#' }
 ];
 
 const pages = [
@@ -39,7 +39,7 @@ export default function Footer() {
     <MDBFooter className='text-center text-lg-start text-muted' style={styles.footerCustom}>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom' style={styles.textWhite}>
         <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks :</span>
+          <span>Get connected with us on social networks:</span>
         </div>
         <div>
           {socialIcons.map(({ icon, url }) => (

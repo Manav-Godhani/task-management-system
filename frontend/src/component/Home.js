@@ -19,6 +19,17 @@ import LoginPage from "./LoginPage"
 import Loader from "./Loader"
 import Contact from "./Contact"
 import Feedback from "./Feedback"
+import EmailAuth from "./EmailAuth"
+import Userview from "./Userview"
+import Usercompletedtask from "./Usercompletedtask"
+import Filtertask from "./Filtertask"
+import Highpriority from "./Highpriority"
+import Mediumpriority from "./Mediumpriority"
+import Lowpriority from "./Lowpriority"
+import Userprogress from "./UserProgress"
+import Userinprogress from "./Userinprogress"
+import Userdeployed from "./Userdeployed"
+import Userdiferred from "./Userdeferred"
 
 function Home() {
   return (
@@ -29,6 +40,16 @@ function Home() {
     <Route path="/admindash" element={ <AdminDashboard/> } />
     <Route path="/viewtask" element={ <ViewTask/> } />
     <Route path="/studentdash" element={ <StudentDashboard/> } />
+    <Route path='/userview' element={<Userview/>}></Route>
+    <Route path='/usercompletedtasks' element={<Usercompletedtask/>}></Route>
+    <Route path='/filtertask/high' element={<Highpriority/>}></Route>
+    <Route path='/filtertask/medium' element={<Mediumpriority/>}></Route>
+    <Route path='/filtertask/low' element={<Lowpriority/>}></Route>
+    <Route path='/filtertask/progress' element={<Userprogress/>}></Route>
+    <Route path='/filtertask/in-progress' element={<Userinprogress/>}></Route>
+    <Route path='/filtertask/deployed' element={<Userdeployed/>}></Route>
+    <Route path='/filtertask/deferred' element={<Userdiferred/>}></Route>
+    <Route path='/filtertask' element={<Filtertask/>}></Route>
     <Route path="/studentresgister" element={ <StudentRegister/> } />
     <Route path="/about" element={ <About/> } />
     <Route path="/contact" element={ <Contact/> } />
@@ -42,6 +63,7 @@ function Home() {
     <Route path="/statsTask" element={<Taskstatus/>}></Route>
     <Route path="/loginpage" element={<LoginPage/>}></Route>
     <Route path="/loader" element={<Loader/>}></Route>
+    <Route path="/emailAuth" element={<EmailAuth/>}></Route>
     {/* <Route path="contact" element={ <Contact/> } /> */}
   </Routes>
   )

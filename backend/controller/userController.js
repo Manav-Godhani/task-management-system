@@ -1,3 +1,5 @@
+const adminSDK = require("../model/firebaseAdmin");
+
 const admin = require("../model/adminModel");
 const student = require("../model/studentModel");
 const task = require("../model/taskModel");
@@ -37,18 +39,62 @@ exports.adminlogin = async (req, res) => {
     }catch(e){}
 }
 
+exports.studresgister = async (req, res) => {
+  try {
 
-exports.studresgister = async (req,res) => {
-    try {
-      const data = await student.create(req.body);
-      res.status(200).json({
-          msg:"student register successful",
-          data: data
-      })
-    } catch (e) {
-      console.log(e);
-    }
-  };
+    console.log("Request received:", req.body);
+
+    const { name, email, password } = req.body;
+
+    // Verify email with Firebase
+    // const firebaseUser = await adminSDK.auth().getUser(uid);
+
+    // if (!firebaseUser.emailVerified) {
+    //   return res.status(400).json({
+    //     msg: "Email is not verified. Please verify your email first.",
+    //     success: false
+    //   });
+    // }
+
+    // // Check if student already exists
+    // const existingStudent = await student.findOne({ email });
+    // if (existingStudent) {
+    //   return res.status(400).json({
+    //     msg: "Student already registered",
+    //     success: false
+    //   });
+    // }
+
+    // Store student in MongoDB
+    const newStudent = await student.create({ name, email, password  });
+
+    res.status(200).json({
+      msg: "Student registration successful",
+      data: newStudent,
+      success: true
+    });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      msg: "Server Error",
+      error: error.message,
+      success: false
+    });
+  }
+};
+
+// exports.studresgister = async (req,res) => {
+//     try {
+//       const data = await student.create(req.body);
+//       res.status(200).json({
+//           msg:"student register successful",
+//           data: data
+//       })
+//     } catch (e) {
+//       console.log(e);
+//     }
+//   };
   
   exports.stulogin = async (req, res) => {
       try{

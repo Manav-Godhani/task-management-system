@@ -18,7 +18,7 @@ export default function About() {
           margin: "0px",
         }}
       >
-        <div className="container" style={{marginTop:"130px"}}>
+        <div className="container my-5">
           <div className="row">
             <div className="col-md-5">
               <div className="form">
